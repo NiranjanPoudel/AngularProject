@@ -1,0 +1,8 @@
+<div>
+    <div class="content-container">
+      <!-- <button   mat-stroked-button (click)="dialogClose()" ><mat-icon id="close-icon">clear</mat-icon></button> -->
+        <span class="content-span full-width">Are you sure?</span>
+    </div>
+    <button mat-flat-button id="no-button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-flat-button id="yes-button"  [mat-dialog-close]="true">YES</button>
+

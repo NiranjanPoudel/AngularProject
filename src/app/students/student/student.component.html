@@ -1,0 +1,59 @@
+<mat-toolbar>
+    <span>{{service.form.controls['$key'].value?"Modify Student":"New Student"}}</span>
+    <span class="fill-ramaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<form [formGroup]='service.form ' class="noramal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" Height="300px">
+        <mat-grid-tile>
+            <div class="controls-container">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field>
+                    <input formControlName="fullName" matInput placeholder="FullName">
+                    <mat-error>Name is Required</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="email" matInput placeholder="Email">
+                    <mat-error>Email is Required</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="mobile" matInput placeholder="Mobile">
+                    <mat-error **ngIf="service.form.controls['mobile'].errors?.required">This field is Required</mat-error>
+                    <mat-error **ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 10 number is required</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="address" matInput placeholder="Address">
+                </mat-form-field>
+            </div>
+           
+        </mat-grid-tile>
+        <mat-grid-tile>
+               <div class="controls-container">
+                   <mat-form-field>
+                       <mat-select formControlName="faculty" placeholder="Faculty">
+                           <mat-option>None</mat-option>
+                           <ng-container *ngFor="let faculty of faculties">
+                               <mat-option value="{{faculty.id}}">{{faculty.value}}</mat-option>
+                           </ng-container>
+                              
+                       </mat-select> 
+                   </mat-form-field>
+                   <mat-form-field appearance="fill">
+                       
+                       <input formControlName="pickDate" matInput [matDatepicker]="picker" placeholder="EnrollmentDate">
+                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                       <mat-datepicker #picker></mat-datepicker>
+                   </mat-form-field>
+               <div class="button-row">
+                   <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                   <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+               </div>
+               </div> 
+        </mat-grid-tile>   
+
+    </mat-grid-list>
+
+</form>
