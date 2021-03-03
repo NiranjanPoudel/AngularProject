@@ -18,6 +18,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatListModule} from '@angular/material/list';
 import {CdkTableModule} from '@angular/cdk/table';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -50,6 +52,7 @@ const Material=[
   FlexLayoutModule,
   MatListModule,
   CdkTableModule,
+  MatCardModule
 ]
 
 @NgModule({

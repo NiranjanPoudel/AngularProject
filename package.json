@@ -25,6 +25,7 @@
     "@angular/router": "~11.2.0",
     "angular-ismobile": "^1.0.0",
     "angularfire2": "^5.4.2",
+    "bootstrap": "^4.6.0",
     "firebase": "^8.2.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

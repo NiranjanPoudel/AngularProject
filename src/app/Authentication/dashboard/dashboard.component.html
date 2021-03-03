@@ -1,0 +1,50 @@
+<!-- top navigation -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+      <img class="brand-logo" src="" alt="SMS">
+    </a>
+  </nav>
+  
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+  
+      <nav class="col-md-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-user"></i>Student Information
+              </a>
+            </li>
+            <!-- Calling SignOut() Api from authenticateService -->
+            <li class="nav-item">
+              <a class="nav-link" (click)="authenticateService.SignOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+  
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Student Information</h1>
+          </div>
+         
+                  <app-students-list></app-students-list>
+          
+  
+        </div>
+      </main>
+  
+    </div>
+  </div>
+
+
+
+
+
